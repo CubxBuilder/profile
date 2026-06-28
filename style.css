@@ -445,6 +445,7 @@ hr {
         height: auto;
         min-height: 100vh;
         overflow-y: auto;
+        left: var(--sitebar-width);
     }
     .banner {
         position: static;
@@ -498,6 +499,7 @@ hr {
     #projects.card,
     #about.card {
         padding-top: 0;
+        left: var(--sitebar-width);
     }
     #about p {
         margin: 20px;
