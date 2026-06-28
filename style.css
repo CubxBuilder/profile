@@ -461,7 +461,7 @@ hr {
         display: none;
         flex-direction: column;
         height: auto;
-        width: 100%;
+        width: calc(100% - var(--sitebar-width));
         padding: 20px;
         gap: 15px;
         box-sizing: border-box;
@@ -470,7 +470,7 @@ hr {
         display: flex;
     }
     .menu_card {
-        width: 100%;
+        width: calc(100% - var(--sitebar-width) - 50px);
         height: 70px;
         margin-left: 0;
         transform: none;
