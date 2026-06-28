@@ -34,6 +34,10 @@ function openMenu() {
     menu.classList.add('active');
     fadeBanner(MENU_BANNER);
     document.body.style.backgroundColor = MENU_BG;
+    window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
 }
 
 function changeTab(tab) {
