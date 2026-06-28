@@ -1,0 +1,325 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Fabian Lehradt</title>
+    <link rel="icon" href="images/favicon.ico" type="image/icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body style="overflow-x: hidden">
+    <nav class="sitebar" id="sitebar">
+      <img
+        src="images/favicon_nbg.ico"
+        class="sitebar_item"
+        id="me1"
+        onclick="window.location.reload()"
+      />
+      <i class="fa-solid fa-bars sitebar_item" onclick="openMenu()"></i>
+      <h1 class="deg270 sitebar_item">Fabian</h1>
+    </nav>
+    <img src="images/banner_menu.png" class="banner" id="banner" />
+    <main class="" id="menu">
+      <div
+        id="menu_about"
+        onclick="changeTab('about')"
+        class="menu_card type2_menu_card"
+      >
+        <h3>Über mich</h3>
+      </div>
+      <div
+        id="menu_socials"
+        onclick="changeTab('socials')"
+        class="menu_card type1_menu_card"
+      >
+        <h3>Socials</h3>
+      </div>
+      <div
+        id="menu_noise_education"
+        onclick="changeTab('noise_education')"
+        class="menu_card type2_menu_card"
+      >
+        <h3>Noise Education</h3>
+      </div>
+      <div
+        id="menu_events"
+        onclick="changeTab('events')"
+        class="menu_card type1_menu_card"
+      >
+        <h3>Events</h3>
+      </div>
+      <div
+        id="menu_projects"
+        onclick="changeTab('projects')"
+        class="menu_card type2_menu_card"
+      >
+        <h3>Projekte</h3>
+      </div>
+    </main>
+    <main class="card" id="about">
+      <h1>Über mich</h1>
+      <p>
+        Ich bin Schüler an der Staatlichen Realschule Gauting und beschäftige
+        mich in meiner Freizeit mit Softwareentwicklung, Musik, Kampfsport und
+        Storytelling. Seit zwei Jahren lerne ich JavaScript und entwickle eigene
+        Projekte, darunter einen Bot für meinen Discord-Server mit über 130
+        Mitgliedern. <br /><br />Außerdem spiele ich Keyboard in der
+        Punk-Rock-Coverband Noise Education. Nachdem wir anfangs nur auf
+        Schulkonzerten gespielt haben, treten wir mittlerweile regelmäßig auf
+        Festivals und Veranstaltungen außerhalb der Schule auf, wie dem
+        Dorfsound Festival oder bei Events in Gauting. <br /><br />Als kreativen
+        Ausgleich leite ich als Dungeon Master eine eigene D&D-Kampagne für eine
+        Gruppe von sieben Spielern in einer selbst entworfenen Fantasy-Welt.
+        Zudem mache ich Taekwondo im 4. Kup.
+      </p>
+    </main>
+    <main class="card" id="socials">
+      <h1>Socials</h1>
+      <a
+        class="link"
+        href="https://www.instagram.com/fabian_lehradt/"
+        target="_blank"
+      >
+        <div>
+          <img
+            src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/instagram/default.svg"
+            width="25"
+            class="image"
+          /><b>fabian_lehradt</b>
+        </div>
+        <i class="fa-solid fa-link"></i>
+      </a>
+      <a
+        class="link"
+        href="https://discord.com/users/1151971830983311441"
+        target="_blank"
+      >
+        <div>
+          <img
+            src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/discord/default.svg"
+            width="25"
+            class="image"
+          /><b>cubxbuilder</b>
+        </div>
+        <i class="fa-solid fa-link"></i>
+      </a>
+      <a
+        class="link"
+        href="https://www.tiktok.com/@fabian_lehradt"
+        target="_blank"
+      >
+        <div>
+          <img
+            src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/tiktok/default.svg"
+            width="25"
+            class="image"
+          /><b>fabian_lehradt</b>
+        </div>
+        <i class="fa-solid fa-link"></i>
+      </a>
+      <a class="link" href="https://github.com/CubxBuilder" target="_blank">
+        <div>
+          <img
+            src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/github/default.svg"
+            width="25"
+            class="image"
+          /><b>CubxBuilder</b>
+        </div>
+        <i class="fa-solid fa-link"></i>
+      </a>
+      <a
+        class="link"
+        href="https://open.spotify.com/user/31pwbuabdzbqav3fhp6mwyoaanuu?si=4692c7f4d3e24ae5"
+        target="_blank"
+      >
+        <div>
+          <img
+            src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/spotify/default.svg"
+            width="25"
+            class="image"
+          /><b>Fabian</b>
+        </div>
+        <i class="fa-solid fa-link"></i>
+      </a>
+    </main>
+
+    <!--Noise Education-->
+    <main class="card" id="noise_education">
+      <h1>Noise Education</h1>
+      <p>
+        Eine Cover-Band, die größtenteils Punk-Rock spielt. Vor kurzem waren wir
+        noch eine einfache Schulband doch jetzt ist es vorbei damit. Jetzt
+        bringen wir Bühnen außerhalb zum beben! Du hast das Verlangen bei einem
+        Auftritt dabei zu sein? Folge uns auf einem unserer Social-Media Kanäle
+        und verpasse keine Ankündigen mehr.
+      </p>
+      <div class="band">
+        <div class="band_part">
+          <p><b>Jannis:</b> Gitarrist & Sänger</p>
+          <p><b>Malea:</b> Gitarristin</p>
+          <p><b>Fabian:</b> Pianist</p>
+          <p><b>Emil:</b> Drummer</p>
+        </div>
+        <div>
+          <p><b>Heidi:</b> Sängerin</p>
+          <p><b>Ioan:</b> Bassist</p>
+          <p><b>Kian</b> Sänger</p>
+          <p><b>Marie</b> Pianistin & *Sängerin*</p>
+        </div>
+      </div>
+      <h3>Socials:</h3>
+      <a
+        class="link"
+        href="https://www.instagram.com/noise.education.band/"
+        target="_blank"
+      >
+        <div>
+          <img
+            src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/instagram/default.svg"
+            width="25"
+            class="image"
+          /><b>noise.education.band</b>
+        </div>
+        <i class="fa-solid fa-link"></i>
+      </a>
+      <a class="link" href="https://discord.gg/BApen2QEdk" target="_blank">
+        <div>
+          <img
+            src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/discord/default.svg"
+            width="25"
+            class="image"
+          /><b>Noise Education Server</b>
+        </div>
+        <i class="fa-solid fa-link"></i>
+      </a>
+      <a
+        class="link"
+        href="https://www.reddit.com/user/noise_education/"
+        target="_blank"
+      >
+        <div>
+          <img
+            src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/reddit/default.svg"
+            width="25"
+            class="image"
+          /><b>Noise Education</b>
+        </div>
+        <i class="fa-solid fa-link"></i>
+      </a>
+      <a
+        class="link"
+        href="https://www.facebook.com/profile.php?id=61590938094868&locale=de_DE"
+        target="_blank"
+      >
+        <div>
+          <img
+            src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/facebook/default.svg"
+            width="25"
+            class="image"
+          /><b>Noise Education</b>
+        </div>
+        <i class="fa-solid fa-link"></i>
+      </a>
+      <a
+        class="link"
+        href="https://www.youtube.com/@noise_education_band"
+        target="_blank"
+      >
+        <div>
+          <img
+            src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/youtube/default.svg"
+            width="25"
+            class="image"
+          /><b>noise_education_band</b>
+        </div>
+        <i class="fa-solid fa-link"></i>
+      </a>
+      <a class="link" href="" target="_blank">
+        <div>
+          <img
+            src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/tiktok/default.svg"
+            width="25"
+            class="image"
+          /><b>---</b>
+        </div>
+        <i class="fa-solid fa-link"></i>
+      </a>
+      <hr />
+      <img src="images/noise_education.png" class="noise_education_image" />
+    </main>
+    <main class="card" id="events">
+      <h1>Events</h1>
+      <h3>Angekündigte Events werden hier angezeigt.</h3>
+    </main>
+    <main class="card" id="projects">
+      <h1>Projekte</h1>
+      <div id="project_div">
+        <div
+          class="project"
+          onclick="
+            window.location.href = 'https://github.com/CubxBuilder/Kekse-Bot'
+          "
+        >
+          <div class="project_head">
+            <h3>Kekse Bot</h3>
+            <img src="https://kekse-bot.dedyn.io:5000/icon.png" width="64px" />
+          </div>
+          <p>
+            Der Kekse-Bot ist ein maßgeschneidertes, funktionsreiches<br />
+            Discord.js-Bot-System (v14), das speziell für den Discord Server<br />
+            <a href="https://discord.gg/pU9zyJRFGn" target="_blank"
+              >Keksegang</a
+            >
+            entwickelt wurde. Er kombiniert ein tiefgehendes <br />Wirtschafts-
+            und Casino-System mit einem sicheren,<br />
+            administrativen Web-Dashboard inklusive<br />
+            Progressive Web App (PWA) Unterstützung.
+          </p>
+        </div>
+        <div class="project">
+          <div class="project_head">
+            <h3>Karl Heinz IV</h3>
+            <img
+              src="https://camo.githubusercontent.com/2468e66df81813e347adfb2d70c65c77417a7192de09d898cb9f7caa8d5092e0/68747470733a2f2f63646e2e646973636f72646170702e636f6d2f617661746172732f313437333735363537303331393036353334332f66653961336332663639643038333633366464383633333336633264363763662e77656270"
+              width="64px"
+            />
+          </div>
+          <p>
+            Karl sorgt auf einem Discord Server dafür, dass die Bettruhe<br />
+            zwischen 22 Uhr und 6 Uhr eingehalten wird, sowie, dass nicht<br />
+            in Caps (Dauerhaften Großbuchstaben) geschrieben wird. Hierzu<br />
+            antwortet er auf geschriebene Nachrichten auf Bayrisch.
+          </p>
+          <a id="bot_invite" href="http://212.132.113.65:3000" target="_blank"
+            >Invite Bot</a
+          >
+        </div>
+        <div
+          class="project"
+          onclick="
+            window.location.href = 'https://lehradt.github.io/ProjectSourcer'
+          "
+          target="_blank"
+        >
+          <div class="project_head">
+            <h3>ProjectSourcer</h3>
+            <img
+              src="https://lehradt.github.io/ProjectSourcer/icon.png"
+              width="64px"
+            />
+          </div>
+          <p>
+            Ein Programm um aus einem einfachen URL eine fertige Quelle<br />
+            zu erstellen. Eine API sucht im Hintergrund Informationen<br />
+            wie Autor oder den Titel des Artikels. Perfekt für Leute die <br />
+            keine Lust haben für Präsentationen oder Vorträge hunderte<br />
+            Quellen zu verfassen.
+          </p>
+        </div>
+      </div>
+    </main>
+    <script src="tab.js"></script>
+  </body>
+</html>
