@@ -1,4 +1,6 @@
-
+/* ==========================================================================
+   FONTS & ROOT VARIABLES
+   ========================================================================== */
 @font-face {
   font-family: 'flehradt';
   font-style: normal;
@@ -8,10 +10,17 @@
 }
 
 :root {
+  /* Sitebar-Breite zentral definiert. main, .banner, .menu_card etc.
+     beziehen sich alle auf diese Variable, damit der Abstand zum
+     linken Rand immer zur tatsächlichen Sitebar-Breite passt. */
   --sitebar-width: min(90px, 6vw);
   --card-bg: #4F0307;
   --menu-bg: #101010;
 }
+
+/* ==========================================================================
+   BASE / LAYOUT
+   ========================================================================== */
 body {
     background: #101010;
     margin: 0;
@@ -31,13 +40,17 @@ main {
 .banner {
     position: absolute;
     top: 0;
-    left: 0;
-    width: 100%;
+    left: var(--sitebar-width);
+    width: calc(100% - var(--sitebar-width));
 }
 
 #banner {
     transition: opacity 0.5s ease;
 }
+
+/* ==========================================================================
+   SITEBAR
+   ========================================================================== */
 #sitebar {
     z-index: 20;
     background: #f14235;
@@ -74,6 +87,10 @@ main {
     rotate: 270deg;
     pointer-events: none;
 }
+
+/* ==========================================================================
+   TAB-WECHSEL (opacity-basiert statt display)
+   ========================================================================== */
 .card, #menu {
     position: absolute;
     top: 0;
@@ -90,6 +107,10 @@ main {
     visibility: visible;
     pointer-events: auto;
 }
+
+/* ==========================================================================
+   CARD-OVERSCHRIFT (gemeinsam für alle Tabs)
+   ========================================================================== */
 .card h1 {
     position: absolute;
     top: 1%;
@@ -100,9 +121,13 @@ main {
     width: calc(100% - var(--sitebar-width));
     color: #fff;
 }
+
+/* ==========================================================================
+   MENU (Startbildschirm)
+   ========================================================================== */
 #menu {
     display: flex;
-    height: auto;
+    height: 100vh;
     width: calc(100% - var(--sitebar-width));
 }
 
@@ -206,6 +231,10 @@ main {
 #menu_projects:hover {
     filter: none;
 }
+
+/* ==========================================================================
+   ABOUT
+   ========================================================================== */
 #about p {
     text-align: justify;
     margin-left: 200px;
@@ -215,6 +244,9 @@ main {
     font-size: 25px;
 }
 
+/* ==========================================================================
+   SOCIALS
+   ========================================================================== */
 #socials.card,
 #noise_education.card,
 #events.card,
@@ -224,7 +256,7 @@ main {
   flex-direction: column;
   padding-top: 28%;
 }
-#noise_education h3, p{
+#noise_education h3, p {
     margin-left: 50px;
 }
 .link .image {
@@ -266,6 +298,10 @@ main {
 .link:hover .fa-solid {
   font-size: 30px;
 }
+
+/* ==========================================================================
+   NOISE EDUCATION
+   ========================================================================== */
 .card h3, .card p {
     margin-right: 50px;
     color: #fff;
@@ -301,10 +337,18 @@ hr {
     display: flex;
     flex-direction: column;
 }
+
+/* ==========================================================================
+   EVENTS
+   ========================================================================== */
 #events h3 {
     margin-left: 100px;
     margin-top: 100px;
 }
+
+/* ==========================================================================
+   PROJECTS
+   ========================================================================== */
 #projects p a {
     color: #fff;
     font-size: 18px;
@@ -374,119 +418,129 @@ hr {
     padding: 8px;
     font-size: 24px;
 }
-@media (max-width: 374px) {
+
+@media (max-width: 899px) {
     :root {
-        --sitebar-width: 60px;
+        --sitebar-width: 64px;
     }
     .sitebar_item, #me1 {
-        width: 45px;
-        margin-top: 40px;
+        width: 42px;
+        margin-top: 35px;
     }
     .fa-bars {
-        font-size: 20px;
+        font-size: 22px;
+    }
+    .card, #menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        display: none;
+    }
+    .card.active, #menu.active {
+        display: block;
+    }
+    main {
+        height: auto;
+        min-height: 100vh;
+        overflow-y: auto;
+    }
+    .banner {
+        position: static;
+        width: 100%;
+        max-height: 35vh;
+        object-fit: cover;
     }
     .card h1 {
-        font-size: 40px;
+        position: static;
+        font-size: 42px;
+        margin: 25px 20px 20px 20px;
+        width: auto;
+    }
+    #menu {
+        display: none;
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+        padding: 20px;
+        gap: 15px;
+        box-sizing: border-box;
+    }
+    #menu.active {
+        display: flex;
+    }
+    .menu_card {
+        width: 100%;
+        height: 70px;
+        margin-left: 0;
+        transform: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .type1_menu_card, .type2_menu_card {
+        transform: none;
+    }
+    .type1_menu_card:hover, .type2_menu_card:hover {
+        transform: none;
+    }
+    .menu_card h3 {
+        margin-top: 0;
+        opacity: 1;
+        transform: none;
+        font-size: 22px;
+    }
+    #socials.card,
+    #noise_education.card,
+    #events.card,
+    #projects.card,
+    #about.card {
+        padding-top: 0;
+    }
+    #about p {
         margin: 20px;
-        margin-bottom: 30px;
-    }
-    #about p,
-    .noise_education_image,
-    .band {
-        margin-left: 20px;
-        width: 85%;
-    }
-    #about p {
-        font-size: 16px;
-        margin-top: 40px;
-    }
-    .menu_card {
-        width: 70px;
-        height: 160px;
-        margin-left: 15px;
-    }
-    .menu_card h3 {
-        font-size: 14px;
-        margin-top: 100px;
-    }
-    #project_div {
-        grid-template-columns: 1fr;
-        margin: 0 15px 30px 15px;
-    }
-    .link {
-        margin-left: 10px;
-        font-size: 16px;
-    }
-}
-@media (min-width: 375px) and (max-width: 599px) {
-    :root {
-        --sitebar-width: 70px;
-    }
-    .sitebar_item, #me1 {
-        width: 55px;
-        margin-top: 50px;
-    }
-    .card h1 {
-        font-size: 60px;
-        margin: 30px;
-        margin-bottom: 40px;
-    }
-    #about p,
-    .noise_education_image,
-    .band {
-        margin-left: 30px;
-        width: 85%;
-    }
-    #about p {
-        font-size: 18px;
-        margin-top: 50px;
-    }
-    .menu_card {
-        width: 90px;
-        height: 190px;
-        margin-left: 25px;
-    }
-    .menu_card h3 {
-        font-size: 16px;
-        margin-top: 120px;
-    }
-    #project_div {
-        grid-template-columns: 1fr;
-        margin: 0 25px 40px 25px;
+        width: auto;
+        font-size: 20px;
+        line-height: 1.5;
     }
     .link {
         margin-left: 20px;
+        font-size: 20px;
+        max-width: calc(100% - 40px);
+    }
+    .card h3, .card p {
+        margin: 0 20px;
         font-size: 18px;
-    }
-}
-@media (min-width: 600px) and (max-width: 899px) {
-    :root {
-        --sitebar-width: 80px;
-    }
-    .card h1 {
-        font-size: 90px;
-        margin: 50px;
-        margin-bottom: 60px;
-    }
-    #about p {
-        margin-left: 80px;
-        width: 75%;
-        font-size: 21px;
+        line-height: 1.5;
     }
     .noise_education_image {
-        margin-left: 80px;
-        width: 80%;
+        width: 90%;
+        margin: 0 auto 30px auto;
+        display: block;
     }
     .band {
-        margin-left: 50px;
-        width: 75%;
+        flex-direction: column;
+        width: auto;
+        margin: 0 20px 20px 20px;
+        gap: 10px;
+    }
+    #noise_education h1 {
+        margin-left: 20px;
+    }
+    #events h3 {
+        margin: 25px 20px;
+        font-size: 18px;
     }
     #project_div {
-        grid-template-columns: repeat(2, 1fr);
-        margin: 0 30px 40px 30px;
+        grid-template-columns: 1fr;
+        margin: 0 20px 30px 20px;
         gap: 20px;
     }
+    #projects p, #projects p a {
+        font-size: 18px;
+    }
 }
+
 @media (min-width: 900px) and (max-width: 1199px) {
     .card h1 {
         font-size: 110px;
@@ -502,8 +556,7 @@ hr {
         margin-left: 70px;
     }
 }
-@media (min-width: 1200px) and (max-width: 1919px) {
-}
+
 @media (min-width: 1920px) {
     :root {
         --sitebar-width: 110px;
