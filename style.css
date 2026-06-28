@@ -462,6 +462,7 @@ hr {
         flex-direction: column;
         height: auto;
         width: calc(100% - var(--sitebar-width));
+        left: var(--sitebar-width);
         padding: 20px;
         gap: 15px;
         box-sizing: border-box;
