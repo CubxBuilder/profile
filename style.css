@@ -433,6 +433,7 @@ hr {
     .card, #menu {
         position: static;
         opacity: 1;
+        left: var(--sitebar-width);
         visibility: visible;
         pointer-events: auto;
         display: none;
