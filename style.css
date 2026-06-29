@@ -432,35 +432,76 @@ hr {
 }
 
 @media (max-width: 899px) {
+    /* --sitebar-width wird hier zur NAV-HÖHE (statt Breite), weil die
+       Sitebar auf Handys oben liegt statt links. Der Name bleibt aus
+       Kompatibilität mit den anderen Breakpoints, der Wert ist aber
+       jetzt eine Höhe und wird unten entsprechend verwendet. */
     :root {
-        --sitebar-width: 64px;
+        --sitebar-width: 56px;
+    }
+
+    /* ---- Sitebar: von links auf oben, von Spalte auf Reihe ---- */
+    #sitebar {
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 14px;
+        width: 100%;
+        height: var(--sitebar-width);
+        padding: 0 12px;
+        box-sizing: border-box;
+        position: fixed;
+        top: 0;
+        left: 0;
     }
     .sitebar_item, #me1 {
-        width: 42px;
-        margin-top: 35px;
+        width: 32px;
+        margin-top: 0;
     }
     .fa-bars {
-        font-size: 22px;
+        font-size: 20px;
     }
+    /* "Fabian"-Schriftzug stand auf der vertikalen Bar quer (270deg).
+       Auf der horizontalen Bar liest sich das nur noch normal. */
+    .deg270 {
+        rotate: 0deg;
+        font-size: 18px;
+        margin: 0;
+    }
+
+    /* ---- Grundlayout: Offset per margin-top statt left ----
+       main/.card/#menu sind hier position: static, daher wirkt "left"
+       nicht mehr als Versatz zur fixed Sitebar - das war der Bug, durch
+       den der Inhalt unter/in der Nav lag. margin-top schiebt den
+       Content stattdessen sauber unter die jetzt horizontale Bar. */
+    main {
+        position: static;
+        left: 0;
+        width: 100%;
+        height: auto;
+        min-height: calc(100vh - var(--sitebar-width));
+        margin-top: var(--sitebar-width);
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    /* ---- Tabs: nur die aktive Card wird angezeigt ----
+       display:none entfernt inaktive Cards komplett aus dem Layout,
+       statt sie nur unsichtbar zu machen - das verhinderte vorher,
+       dass mehrere Inhalte gleichzeitig sichtbar/übereinander lagen. */
     .card, #menu {
         position: static;
         opacity: 1;
-        left: var(--sitebar-width);
+        left: 0;
         visibility: visible;
         pointer-events: auto;
         display: none;
+        width: 100%;
     }
-    .card.active, #menu.active {
+    .card.active {
         display: block;
     }
-    main {
-        height: auto;
-        min-height: 100vh;
-        overflow-y: auto;
-        left: var(--sitebar-width);
-    }
-    /* .banner ist jetzt statisch im Mobile-Layout; die Höhe begrenzt
-       sich über die Bildhöhe (#banner), nicht über den Wrapper. */
+
     .banner {
         position: static;
         width: 100%;
@@ -480,8 +521,8 @@ hr {
         display: none;
         flex-direction: column;
         height: auto;
-        width: calc(100% - var(--sitebar-width));
-        left: var(--sitebar-width);
+        width: 100%;
+        left: 0;
         padding: 20px;
         gap: 15px;
         box-sizing: border-box;
@@ -490,13 +531,14 @@ hr {
         display: flex;
     }
     .menu_card {
-        width: calc(100% - var(--sitebar-width) - 50px);
+        width: 100%;
         height: 70px;
         margin-left: 0;
         transform: none;
         display: flex;
         align-items: center;
         justify-content: center;
+        box-sizing: border-box;
     }
     .type1_menu_card, .type2_menu_card {
         transform: none;
@@ -516,13 +558,14 @@ hr {
     #projects.card,
     #about.card {
         padding-top: 0;
-        left: var(--sitebar-width);
+        left: 0;
     }
     #about p {
         margin: 20px;
         width: auto;
         font-size: 20px;
         line-height: 1.5;
+        box-sizing: border-box;
     }
     .link {
         margin-left: 20px;
@@ -533,6 +576,7 @@ hr {
         margin: 0 20px;
         font-size: 18px;
         line-height: 1.5;
+        box-sizing: border-box;
     }
     .noise_education_image {
         width: 90%;
@@ -544,6 +588,7 @@ hr {
         width: auto;
         margin: 0 20px 20px 20px;
         gap: 10px;
+        box-sizing: border-box;
     }
     #noise_education h1 {
         margin-left: 20px;
@@ -556,6 +601,7 @@ hr {
         grid-template-columns: 1fr;
         margin: 0 20px 30px 20px;
         gap: 20px;
+        box-sizing: border-box;
     }
     #projects p, #projects p a {
         font-size: 18px;
