@@ -36,16 +36,23 @@ main {
     height: auto;
     width: calc(100% - var(--sitebar-width));
 }
-
-.banner {
-    position: absolute;
-    top: 0;
-    left: var(--sitebar-width);
-    width: calc(100% - var(--sitebar-width));
+img {
+    overflow-clip-margin: content-box;
+    overflow: clip;
 }
-
-#banner {
-    transition: opacity 0.5s ease;
+.banner {
+    text-align: center;
+    pointer-events: none;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    overflow: hidden;
+}
+.banner img {
+    min-width: 100%;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
 }
 
 /* ==========================================================================
