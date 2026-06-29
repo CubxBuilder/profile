@@ -48,11 +48,16 @@ img {
     left: 0;
     overflow: hidden;
 }
-.banner img {
+
+/* #banner ist das <img>, das tab.js per fadeBanner() ein-/ausblendet.
+   Die opacity-transition muss hier sitzen (nicht auf .banner), weil
+   das Skript direkt banner.style.opacity setzt. */
+#banner {
     min-width: 100%;
     position: relative;
     left: 50%;
     transform: translate(-50%);
+    transition: opacity 0.25s ease;
 }
 
 /* ==========================================================================
@@ -454,8 +459,13 @@ hr {
         overflow-y: auto;
         left: var(--sitebar-width);
     }
+    /* .banner ist jetzt statisch im Mobile-Layout; die Höhe begrenzt
+       sich über die Bildhöhe (#banner), nicht über den Wrapper. */
     .banner {
         position: static;
+        width: 100%;
+    }
+    #banner {
         width: 100%;
         max-height: 35vh;
         object-fit: cover;
