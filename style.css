@@ -163,85 +163,105 @@ img {
 
 .menu_card h3 {
     margin-top: 160px;
-    opacity: 0;
-    transform: translateY(15px);
+    /* Auf Touch gibt es keinen Hover-Zustand, der Text muss also von
+       Anfang an sichtbar sein. Auf Maus-Geräten wird das unten (im
+       hover-fähigen Media Query) wieder auf "erst bei Hover" umgestellt. */
+    opacity: 1;
+    transform: translateY(0);
     transition: opacity 0.5s ease, transform 0.5s ease;
     cursor: pointer;
     color: #fff;
     text-shadow: 2px 1px #515151;
 }
 
-.type1_menu_card:hover {
-    transform: translateY(45%);
-}
-
-.type2_menu_card:hover {
-    transform: translateY(48%);
-}
-
-.menu_card:hover h3 {
-    opacity: 1;
-    transform: translateY(0);
+#menu_about,
+#menu_socials,
+#menu_noise_education,
+#menu_events,
+#menu_projects {
+    /* Gleicher Gedanke wie bei .menu_card h3: ohne Hover-Fähigkeit soll
+       das Bild von Anfang an klar zu sehen sein statt gedimmt/entsättigt
+       hinter einem Filter zu liegen, den niemand "weghovern" kann. */
+    filter: none;
+    transition: 0.5s;
 }
 
 #menu_about {
     background-image: url('images/menu_about.png');
-    filter: brightness(60%) grayscale(50%);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    transition: 0.5s;
-}
-#menu_about:hover {
-    filter: none;
 }
 
 #menu_socials {
     background-image: url('images/menu_socials.jpeg');
-    filter: brightness(60%) grayscale(50%);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    transition: 0.5s;
-}
-#menu_socials:hover {
-    filter: none;
 }
 
 #menu_noise_education {
     background-image: url('images/menu_noise_education.png');
-    filter: brightness(60%) grayscale(50%);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    transition: 0.5s;
-}
-#menu_noise_education:hover {
-    filter: none;
 }
 
 #menu_events {
     background-image: url('images/menu_events.jpeg');
-    filter: brightness(60%) grayscale(50%);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    transition: 0.5s;
-}
-#menu_events:hover {
-    filter: none;
 }
 
 #menu_projects {
     background-image: url('images/menu_projects.png');
-    filter: brightness(60%) grayscale(50%);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    transition: 0.5s;
 }
-#menu_projects:hover {
-    filter: none;
+
+/* ==========================================================================
+   HOVER-EFFEKTE NUR FÜR GERÄTE MIT ECHTER MAUS
+   ========================================================================== */
+/* (hover: hover) and (pointer: fine) trifft auf Geräte zu, die tatsächlich
+   einen Mauszeiger haben (Desktop/Laptop mit Maus oder Trackpad). Handys
+   und Tablets (pointer: coarse, kein echtes hover) bekommen diese Effekte
+   nicht, damit nichts "stuck" hängen bleibt oder unsichtbar wird, nur weil
+   ein Hover-Zustand technisch nie verlassen werden kann. */
+@media (hover: hover) and (pointer: fine) {
+    .type1_menu_card:hover {
+        transform: translateY(45%);
+    }
+
+    .type2_menu_card:hover {
+        transform: translateY(48%);
+    }
+
+    .menu_card h3 {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    .menu_card:hover h3 {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    #menu_about,
+    #menu_socials,
+    #menu_noise_education,
+    #menu_events,
+    #menu_projects {
+        filter: brightness(60%) grayscale(50%);
+    }
+    #menu_about:hover,
+    #menu_socials:hover,
+    #menu_noise_education:hover,
+    #menu_events:hover,
+    #menu_projects:hover {
+        filter: none;
+    }
 }
 
 /* ==========================================================================
@@ -301,14 +321,19 @@ img {
   transition: 0.5s;
 }
 
-.link:hover {
-  font-size: 30px;
-}
-.link:hover .image {
-  width: 30px;
-}
-.link:hover .fa-solid {
-  font-size: 30px;
+/* Schriftgröße bei Hover wachsen lassen ist ein reiner Maus-Effekt -
+   auf Touch bliebe das nach einem Tap optisch "stecken", bis woanders
+   getippt wird. Daher hier raus und unten in den Maus-Media-Query. */
+@media (hover: hover) and (pointer: fine) {
+    .link:hover {
+        font-size: 30px;
+    }
+    .link:hover .image {
+        width: 30px;
+    }
+    .link:hover .fa-solid {
+        font-size: 30px;
+    }
 }
 
 /* ==========================================================================
@@ -401,21 +426,6 @@ hr {
     justify-content: space-between;
 }
 
-.project:hover {
-    transform: scale(1.03);
-    background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35));
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-}
-.project:hover p {
-    font-size: 21px;
-}
-.project:hover a {
-    font-size: 21px;
-}
-.project:hover img {
-    transform: scale(1.06);
-}
-
 #bot_invite {
     background-color: #7289da;
     padding: 5px;
@@ -426,9 +436,26 @@ hr {
     transition: 0.5s;
 }
 
-#bot_invite:hover {
-    padding: 8px;
-    font-size: 24px;
+@media (hover: hover) and (pointer: fine) {
+    .project:hover {
+        transform: scale(1.03);
+        background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35));
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+    .project:hover p {
+        font-size: 21px;
+    }
+    .project:hover a {
+        font-size: 21px;
+    }
+    .project:hover img {
+        transform: scale(1.06);
+    }
+
+    #bot_invite:hover {
+        padding: 8px;
+        font-size: 24px;
+    }
 }
 
 @media (max-width: 899px) {
@@ -552,13 +579,27 @@ hr {
         transform: none;
         font-size: 22px;
     }
+    /* WICHTIG: #id.card hat höhere Spezifität (ID+Klasse) als .card.active
+       (zwei Klassen). Die Desktop-Regel (Zeile ~262) setzt hier
+       display:flex fest, das sonst IMMER gewinnt - auch ohne .active.
+       Genau das war der Grund, warum auf dem Handy alle Cards gleichzeitig
+       sichtbar waren. Deshalb hier display explizit pro Zustand erneut
+       mit gleicher Spezifität setzen. */
     #socials.card,
     #noise_education.card,
     #events.card,
     #projects.card,
     #about.card {
+        display: none;
         padding-top: 0;
         left: 0;
+    }
+    #socials.card.active,
+    #noise_education.card.active,
+    #events.card.active,
+    #projects.card.active,
+    #about.card.active {
+        display: block;
     }
     #about p {
         margin: 20px;
