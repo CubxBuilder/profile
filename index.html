@@ -1,15 +1,12 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="de">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fabian Lehradt</title>
     <link rel="icon" href="images/favicon.ico" type="image/icon" />
     <link href="images/icon.png" rel="apple-touch-icon">
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-    />
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"/>
     <meta name="author" content="Fabian Lehradt">
     <meta name="robots" content="index,follow">
     <meta name="url" content="https://fabianlehradt.is-a.dev">
@@ -22,56 +19,51 @@
     <meta property="og:description" content="Fabian Lehradt - Social Links, Projekte und Events auf einen Blick.">
     <meta property="og:image" content="https://fabianlehradt.is-a.dev/images/favicon.ico">
     <link rel="canonical" href="https://fabianlehradt.is-a.dev/">
-    <link rel="stylesheet" href="style.css">
+    <style>
+      @font-face {font-family: 'flehradt';font-style: normal;font-weight: 400;font-display: swap;src: local('Flehradt Regular'), local('flehradt'), url('fonts/flehradt-400.woff2') format('woff2');}
+    </style>
+    <style>
+      :root {--sitebar-width: min(90px, 6vw);--card-bg: #4F0307;--color-bg: #101010;--color-sitebar-bg: #f14235;--color-white: #fff;--color-text-shadow: #515151;--color-shadow: #0003;--color-discord: #7289da;--overlay-faint: rgba(0, 0, 0, 0.1);--overlay-light: rgba(0, 0, 0, 0.125);--overlay-medium: rgba(0, 0, 0, 0.25);--overlay-medium-hover: rgba(0, 0, 0, 0.35);--overlay-shadow: rgba(0, 0, 0, 0.3);--transition-speed: 0.5s;--radius-sm: 5px;--radius-md: 10px;--spacing-md: 50px;--spacing-lg: 100px;--font-size-sm: 18px;--font-size-base: 20px;--font-size-lg: 25px;--menu-card-width: clamp(140px, 11vw, 230px);--menu-card-height: clamp(280px, 24vw, 480px);--menu-card-width-mobile: clamp(60px, 16vw, 110px);}
+    </style>
+    <style>
+      body {background: var(--color-bg);margin: 0;padding: 0;font-family: 'flehradt';user-select: none;}main {position: absolute;top: 0;left: var(--sitebar-width);height: auto;width: calc(100% - var(--sitebar-width));}img {overflow-clip-margin: content-box;overflow: clip;}.banner {text-align: center;pointer-events: none;width: 100%;position: absolute;left: 0;overflow: hidden;}#banner {min-width: 100%;position: relative;left: 50%;transform: translate(-50%);transition: opacity 0.25s ease;}
+    </style>
+    <style>
+      #sitebar {z-index: 20;background: var(--color-sitebar-bg);flex-direction: column;justify-content: flex-start;align-items: center;gap: 25px;width: var(--sitebar-width);height: 100%;padding-top: 30px;display: flex;position: fixed;top: 0;left: 0;box-shadow: 1px 0 104px var(--color-shadow);}.sitebar_item {margin-top: 75px;width: 90px;cursor: pointer;}.fa-bars {font-size: 30px;}#me1 {margin-top: 5px;width: var(--sitebar-width);}.deg270 {rotate: 270deg;pointer-events: none;}
+    </style>
+    <style>
+      .card, #menu {position: absolute;top: 0;left: var(--sitebar-width);width: calc(100% - var(--sitebar-width));opacity: 0;visibility: hidden;pointer-events: none;transition: opacity var(--transition-speed) ease;}.card.active, #menu.active {opacity: 1;visibility: visible;pointer-events: auto;}.card h1 {position: absolute;top: 1%;left: var(--sitebar-width);font-size: 150px;margin: 100px;margin-bottom: 110px;width: calc(100% - var(--sitebar-width));color: var(--color-white);}#menu {display: flex;height: 100vh;width: calc(100% - var(--sitebar-width));}.menu_card {position: relative;height: var(--menu-card-height);width: var(--menu-card-width);background: var(--color-white);text-align: center;margin-left: var(--spacing-md);transition: transform var(--transition-speed) ease;}.type1_menu_card {transform: translateY(65%);}.type2_menu_card {transform: translateY(75%);}.menu_card h3 {margin-top: 160px;opacity: 1;transform: translateY(0);transition: opacity var(--transition-speed) ease, transform var(--transition-speed) ease;cursor: pointer;color: var(--color-white);text-shadow: 2px 1px var(--color-text-shadow);}#menu_about,#menu_socials,#menu_noise_education,#menu_events,#menu_projects {filter: none;transition: var(--transition-speed);}#menu_about {background-image: url('images/menu_about.png');background-repeat: no-repeat;background-position: center;background-size: cover;}#menu_socials {background-image: url('images/menu_socials.jpeg');background-repeat: no-repeat;background-position: center;background-size: cover;}#menu_noise_education {background-image: url('images/menu_noise_education.png');background-repeat: no-repeat;background-position: center;background-size: cover;}#menu_events {background-image: url('images/menu_events.jpeg');background-repeat: no-repeat;background-position: center;background-size: cover;}#menu_projects {background-image: url('images/menu_projects.png');background-repeat: no-repeat;background-position: center;background-size: cover;}
+    </style>
+    <style>
+      #about p {text-align: justify;margin-left: 200px;margin-top: var(--spacing-lg);margin-bottom: var(--spacing-md);width: 60%;font-size: var(--font-size-lg);}#socials.card,#noise_education.card,#events.card,#projects.card,#about.card {display: flex;flex-direction: column;padding-top: 28%;}#noise_education h3, p {margin-left: var(--spacing-md);}.link .image {margin-right: 10px;transition: var(--transition-speed);width: 25px;font-size: var(--font-size-lg);}.link {color: var(--color-white);text-decoration: none;margin-bottom: 5px;font-size: var(--font-size-lg);transition: var(--transition-speed);background: var(--overlay-faint);padding: 2px;border-radius: var(--radius-sm);justify-content: space-between;display: flex;max-width: 90%;align-items: center;margin-left: var(--spacing-md);}.link i {font-size: var(--font-size-lg);position: relative;right: 0;transition: var(--transition-speed);}.card h3, .card p {margin-right: var(--spacing-md);color: var(--color-white);font-size: var(--font-size-base);}hr {margin-top: var(--spacing-md);margin-bottom: var(--spacing-md);}.noise_education_image {width: 70%;margin-bottom: var(--spacing-md);margin-left: 200px;}#noise_education h1 {margin-left: 0;}.band {display: flex;width: 60%;justify-content: space-between;margin-left: 100px;background: linear-gradient(var(--overlay-light), var(--overlay-light));padding: 15px;border-radius: var(--radius-md);}.band_part {display: flex;flex-direction: column;}#events h3 {margin-left: 100px;margin-top: var(--spacing-lg);}#projects p a {color: var(--color-white);font-size: var(--font-size-sm);transition: var(--transition-speed);}#projects p {font-size: var(--font-size-sm);transition: var(--transition-speed);}#projects img {transition: var(--transition-speed);}.project_head {display: flex;flex-direction: row;align-items: center;justify-content: space-between;}#project_div {display: grid;grid-template-columns: repeat(2, 1fr);gap: 30px;margin: 0 var(--spacing-md) var(--spacing-md) var(--spacing-md);}.project {text-align: left;background: linear-gradient(var(--overlay-medium), var(--overlay-medium));padding: 20px;border-radius: var(--radius-md);transition: transform var(--transition-speed), box-shadow var(--transition-speed), background-color var(--transition-speed);display: flex;flex-direction: column;justify-content: space-between;}#bot_invite {background-color: var(--color-discord);padding: 5px;border-radius: var(--radius-sm);font-size: 14px;text-decoration: none;color: var(--color-white);transition: var(--transition-speed);}
+    </style>
+    <style>
+      @media (hover: hover) and (pointer: fine) {.type1_menu_card:hover {transform: translateY(45%);}.type2_menu_card:hover {transform: translateY(48%);}.menu_card h3 {opacity: 0;transform: translateY(15px);}.menu_card:hover h3 {opacity: 1;transform: translateY(0);}#menu_about,#menu_socials,#menu_noise_education,#menu_events,#menu_projects {filter: brightness(60%) grayscale(50%);}#menu_about:hover,#menu_socials:hover,#menu_noise_education:hover,#menu_events:hover,#menu_projects:hover {filter: none;}}@media (hover: hover) and (pointer: fine) {.link:hover {font-size: 30px;}.link:hover .image {width: 30px;}.link:hover .fa-solid {font-size: 30px;}}@media (hover: hover) and (pointer: fine) {.project:hover {transform: scale(1.03);background: linear-gradient(var(--overlay-medium-hover), var(--overlay-medium-hover));box-shadow: 0 10px 20px var(--overlay-shadow);}.project:hover p {font-size: 21px;}.project:hover a {font-size: 21px;}.project:hover img {transform: scale(1.06);}#bot_invite:hover {padding: 8px;font-size: 24px;}}@media (max-width: 899px) {:root {--sitebar-width: 56px;}#sitebar {flex-direction: row;justify-content: flex-start;align-items: center;gap: 14px;width: 100%;height: var(--sitebar-width);padding: 0 12px;box-sizing: border-box;position: fixed;top: 0;left: 0;}.sitebar_item, #me1 {width: 32px;margin-top: 0;}.fa-bars {font-size: 20px;}.deg270 {rotate: 0deg;font-size: 18px;margin: 0;}main {position: static;left: 0;width: 100%;height: auto;min-height: calc(100vh - var(--sitebar-width));margin-top: var(--sitebar-width);overflow-y: auto;overflow-x: hidden;}.card, #menu {position: static;opacity: 1;left: 0;visibility: visible;pointer-events: auto;display: none;width: 100%;}.card.active {display: block;}.banner {position: static;width: 100%;}#banner {width: 100%;max-height: 35vh;object-fit: cover;}.card h1 {position: static;font-size: 42px;margin: 25px 20px 20px 20px;width: auto;}#menu {display: none;flex-direction: column;height: auto;width: 100%;left: 0;padding: 20px;gap: 15px;box-sizing: border-box;}#menu.active {display: flex;}.menu_card {width: 100%;height: var(--menu-card-width-mobile);margin-left: 0;transform: none;display: flex;align-items: center;justify-content: center;box-sizing: border-box;}.type1_menu_card, .type2_menu_card {transform: none;}.type1_menu_card:hover, .type2_menu_card:hover {transform: none;}.menu_card h3 {margin-top: 0;opacity: 1;transform: none;font-size: 22px;}#socials.card,#noise_education.card,#events.card,#projects.card,#about.card {display: none;padding-top: 0;left: 0;}#socials.card.active,#noise_education.card.active,#events.card.active,#projects.card.active,#about.card.active {display: block;}#about p {margin: 20px;width: auto;font-size: 20px;line-height: 1.5;box-sizing: border-box;}.link {margin-left: 20px;font-size: 20px;max-width: calc(100% - 40px);}.card h3, .card p {margin: 0 20px;font-size: 18px;line-height: 1.5;box-sizing: border-box;}.noise_education_image {width: 90%;margin: 0 auto 30px auto;display: block;}.band {flex-direction: column;width: auto;margin: 0 20px 20px 20px;gap: 10px;box-sizing: border-box;}#noise_education h1 {margin-left: 20px;}#events h3 {margin: 25px 20px;font-size: 18px;}#project_div {grid-template-columns: 1fr;margin: 0 20px 30px 20px;gap: 20px;box-sizing: border-box;}#projects p, #projects p a {font-size: 18px;}}@media (min-width: 900px) and (max-width: 1199px) {.card h1 {font-size: 110px;}#about p {margin-left: 120px;width: 65%;}.noise_education_image {margin-left: 120px;}.band {margin-left: 70px;}}@media (min-width: 1920px) {:root {--sitebar-width: 110px;}.sitebar_item, #me1 {width: 100px;}.card h1 {font-size: 190px;}#about p {font-size: 30px;width: 55%;}.noise_education_image {width: 60%;}.band {width: 50%;}#project_div {grid-template-columns: repeat(3, 1fr);}}
+    </style>
   </head>
   <body style="overflow-x: hidden">
     <nav class="sitebar" id="sitebar">
-      <img
-        src="images/favicon_nbg.ico"
-        class="sitebar_item"
-        id="me1"
-        onclick="window.location.reload()"
-      />
+      <img src="images/favicon_nbg.ico"class="sitebar_item"id="me1"onclick="window.location.reload()">
       <i class="fa-solid fa-bars sitebar_item" onclick="openMenu()"></i>
       <h1 class="deg270 sitebar_item">Fabian</h1>
     </nav>
     <div class="banner">
-      <img id="banner" src="images/banner_menu.png" />
+      <img id="banner" src="images/banner_menu.png">
     </div>
     <main class="" id="menu">
-       <div
-        id="menu_about"
-        onclick="changeTab('about')"
-        class="menu_card type2_menu_card"
-      >
+       <div id="menu_about"onclick="changeTab('about')"class="menu_card type2_menu_card">
         <h3>Über mich</h3>
       </div>
-      <div
-        id="menu_socials"
-        onclick="changeTab('socials')"
-        class="menu_card type1_menu_card"
-      >
+      <div id="menu_socials"onclick="changeTab('socials')"class="menu_card type1_menu_card">
         <h3>Socials</h3>
       </div>
-      <div
-        id="menu_noise_education"
-        onclick="changeTab('noise_education')"
-        class="menu_card type2_menu_card"
-      >
+      <div id="menu_noise_education"onclick="changeTab('noise_education')"class="menu_card type2_menu_card">
         <h3>Noise Education</h3>
       </div>
-      <div
-        id="menu_events"
-        onclick="changeTab('events')"
-        class="menu_card type1_menu_card"
-      >
+      <div id="menu_events"onclick="changeTab('events')"class="menu_card type1_menu_card">
         <h3>Events</h3>
       </div>
-      <div
-        id="menu_projects"
-        onclick="changeTab('projects')"
-        class="menu_card type2_menu_card"
-      >
+      <div id="menu_projects"onclick="changeTab('projects')"class="menu_card type2_menu_card">
         <h3>Projekte</h3>
       </div>
     </main>
@@ -82,11 +74,11 @@
         mich in meiner Freizeit mit APIs, Webdesign, Musik, Kampfkunst und
         Storytelling. Seit zwei Jahren lerne ich JavaScript und entwickle eigene
         Projekte, darunter einen Bot für meinen Discord-Server mit über 130
-        Mitgliedern. <br /><br />Außerdem spiele ich Keyboard in der
+        Mitgliedern. <br><br>Außerdem spiele ich Keyboard in der
         Punk-Rock-Coverband Noise Education. Nachdem wir anfangs nur auf
         Schulkonzerten gespielt haben, treten wir mittlerweile regelmäßig auf
         Festivals und Veranstaltungen außerhalb der Schule auf, wie dem
-        Dorfsound Festival oder bei Events in Gauting. <br /><br />Als kreativen
+        Dorfsound Festival oder bei Events in Gauting. <br><br>Als kreativen
         Ausgleich leite ich als Dungeon Master eine eigene D&D-Kampagne für eine
         Gruppe von sieben Spielern in einer selbst entworfenen Fantasy-Welt.
         Zudem mache ich Taekwondo im 4. Kup.
@@ -94,89 +86,49 @@
     </main>
     <main class="card" id="socials">
       <h1>Socials</h1>
-      <a
-        class="link"
-        href="https://www.instagram.com/fabian_lehradt/"
-        target="_blank"
-      >
+      <a class="link"href="https://www.instagram.com/fabian_lehradt/"target="_blank">
         <div>
-          <img
-            src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/instagram/default.svg"
-            width="25"
-            class="image"
-          /><b>fabian_lehradt</b>
+          <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/instagram/default.svg"width="25"class="image">
+          <b>fabian_lehradt</b>
         </div>
         <i class="fa-solid fa-link"></i>
       </a>
-      <a
-        class="link"
-        href="https://discord.com/users/1151971830983311441"
-        target="_blank"
-      >
+      <a class="link"href="https://discord.com/users/1151971830983311441"target="_blank">
         <div>
-          <img
-            src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/discord/default.svg"
-            width="25"
-            class="image"
-          /><b>cubxbuilder</b>
+          <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/discord/default.svg"width="25"class="image">
+          <b>cubxbuilder</b>
         </div>
         <i class="fa-solid fa-link"></i>
       </a>
-      <a
-        class="link"
-        href="https://www.tiktok.com/@fabian_lehradt"
-        target="_blank"
-      >
+      <a class="link"href="https://www.tiktok.com/@fabian_lehradt"target="_blank">
         <div>
-          <img
-            src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/tiktok/default.svg"
-            width="25"
-            class="image"
-          /><b>fabian_lehradt</b>
+          <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/tiktok/default.svg"width="25"class="image">
+          <b>fabian_lehradt</b>
         </div>
         <i class="fa-solid fa-link"></i>
       </a>
       <a class="link" href="https://github.com/CubxBuilder" target="_blank">
         <div>
-          <img
-            src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/github/default.svg"
-            width="25"
-            class="image"
-          /><b>CubxBuilder</b>
+          <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/github/default.svg"width="25"class="image">
+          <b>CubxBuilder</b>
         </div>
         <i class="fa-solid fa-link"></i>
       </a>
-      <a
-        class="link"
-        href="https://open.spotify.com/user/31pwbuabdzbqav3fhp6mwyoaanuu?si=4692c7f4d3e24ae5"
-        target="_blank"
-      >
+      <a class="link"href="https://open.spotify.com/user/31pwbuabdzbqav3fhp6mwyoaanuu?si=4692c7f4d3e24ae5"target="_blank">
         <div>
-          <img
-            src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/spotify/default.svg"
-            width="25"
-            class="image"
-          /><b>Fabian</b>
+          <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/spotify/default.svg"width="25"class="image">
+          <b>Fabian</b>
         </div>
         <i class="fa-solid fa-link"></i>
       </a>
-      <a
-        class="link"
-        href="https://www.kleinanzeigen.de/s-bestandsliste.html?userId=163860823"
-        target="_blank"
-      >
+      <a class="link"href="https://www.kleinanzeigen.de/s-bestandsliste.html?userId=163860823"target="_blank">
         <div>
-          <img
-            src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/kleinanzeigen/default.svg"
-            width="25"
-            class="image"
-          /><b>Fabian Lehradt</b>
+          <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/kleinanzeigen/default.svg"width="25"class="image">
+          <b>Fabian Lehradt</b>
         </div>
         <i class="fa-solid fa-link"></i>
       </a>
     </main>
-
-    <!--Noise Education-->
     <main class="card" id="noise_education">
       <h1>Noise Education</h1>
       <p>
@@ -201,84 +153,51 @@
         </div>
       </div>
       <h3>Socials:</h3>
-      <a
-        class="link"
-        href="https://www.instagram.com/noise.education.band/"
-        target="_blank"
+      <a class="link"href="https://www.instagram.com/noise.education.band/"target="_blank"
       >
         <div>
-          <img
-            src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/instagram/default.svg"
-            width="25"
-            class="image"
-          /><b>noise.education.band</b>
+          <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/instagram/default.svg"width="25"class="image">
+          <b>noise.education.band</b>
         </div>
         <i class="fa-solid fa-link"></i>
       </a>
       <a class="link" href="https://discord.gg/BApen2QEdk" target="_blank">
         <div>
-          <img
-            src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/discord/default.svg"
-            width="25"
-            class="image"
-          /><b>Noise Education Server</b>
+          <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/discord/default.svg"width="25"class="image">
+          <b>Noise Education Server</b>
         </div>
         <i class="fa-solid fa-link"></i>
       </a>
-      <a
-        class="link"
-        href="https://www.reddit.com/user/noise_education/"
-        target="_blank"
-      >
+      <a class="link"href="https://www.reddit.com/user/noise_education/"target="_blank">
         <div>
-          <img
-            src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/reddit/default.svg"
-            width="25"
-            class="image"
-          /><b>Noise Education</b>
+          <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/reddit/default.svg"width="25"class="image">
+          <b>Noise Education</b>
         </div>
         <i class="fa-solid fa-link"></i>
       </a>
-      <a
-        class="link"
-        href="https://www.facebook.com/profile.php?id=61590938094868&locale=de_DE"
-        target="_blank"
-      >
+      <a class="link"href="https://www.facebook.com/profile.php?id=61590938094868&locale=de_DE"target="_blank">
         <div>
-          <img
-            src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/facebook/default.svg"
-            width="25"
-            class="image"
-          /><b>Noise Education</b>
+          <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/facebook/default.svg"width="25"class="image">
+          <b>Noise Education</b>
         </div>
         <i class="fa-solid fa-link"></i>
       </a>
-      <a
-        class="link"
-        href="https://www.youtube.com/@noise_education_band"
-        target="_blank"
-      >
+      <a class="link"href="https://www.youtube.com/@noise_education_band"target="_blank">
         <div>
-          <img
-            src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/youtube/default.svg"
-            width="25"
-            class="image"
-          /><b>noise_education_band</b>
+          <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/youtube/default.svg"width="25"class="image">
+          <b>noise_education_band</b>
         </div>
         <i class="fa-solid fa-link"></i>
       </a>
       <a class="link" href="" target="_blank">
         <div>
-          <img
-            src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/tiktok/default.svg"
-            width="25"
-            class="image"
-          /><b>---</b>
+          <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/tiktok/default.svg"width="25"class="image">
+          <b>---</b>
         </div>
         <i class="fa-solid fa-link"></i>
       </a>
-      <hr />
-      <img src="images/noise_education.png" class="noise_education_image" />
+      <hr>
+      <img src="images/noise_education.png" class="noise_education_image">
     </main>
     <main class="card" id="events">
       <h1>Events</h1>
@@ -287,59 +206,38 @@
     <main class="card" id="projects">
       <h1>Projekte</h1>
       <div id="project_div">
-        <div
-          class="project"
-          onclick="
-            window.location.href = 'https://github.com/CubxBuilder/Kekse-Bot'
-          "
-        >
+        <div class="project"onclick="window.location.href = 'https://github.com/CubxBuilder/Kekse-Bot'">
           <div class="project_head">
             <h3>Kekse Bot</h3>
-            <img src="https://kekse-bot.dedyn.io:5000/icon.png" width="64px" />
+            <img src="https://kekse-bot.dedyn.io:5000/icon.png" width="64px">
           </div>
           <p>
-            Der Kekse-Bot ist ein maßgeschneidertes, funktionsreiches<br />
-            Discord.js-Bot-System (v14), das speziell für den Discord Server<br />
-            <a href="https://discord.gg/pU9zyJRFGn" target="_blank"
-              >Keksegang</a
-            >
-            entwickelt wurde. Er kombiniert ein tiefgehendes <br />Wirtschafts-
-            und Casino-System mit einem sicheren,<br />
-            administrativen Web-Dashboard inklusive<br />
+            Der Kekse-Bot ist ein maßgeschneidertes, funktionsreiches<br>
+            Discord.js-Bot-System (v14), das speziell für den Discord Server<br>
+            <a href="https://discord.gg/pU9zyJRFGn" target="_blank">Keksegang</a>
+            entwickelt wurde. Er kombiniert ein tiefgehendes <br>Wirtschafts-
+            und Casino-System mit einem sicheren,<br>
+            administrativen Web-Dashboard inklusive<br>
             Progressive Web App (PWA) Unterstützung.
           </p>
         </div>
         <div class="project">
           <div class="project_head">
             <h3>Karl Heinz IV</h3>
-            <img
-              src="https://camo.githubusercontent.com/2468e66df81813e347adfb2d70c65c77417a7192de09d898cb9f7caa8d5092e0/68747470733a2f2f63646e2>
-              width="64px"
-            />
+            <img src="https://camo.githubusercontent.com/2468e66df81813e347adfb2d70c65c77417a7192de09d898cb9f7caa8d5092e0/68747470733a2f2f63646e2>width="64px">
           </div>
           <p>
-            Karl sorgt auf einem Discord Server dafür, dass die Bettruhe<br />
-            zwischen 22 Uhr und 6 Uhr eingehalten wird, sowie, dass nicht<br />
-            in Caps (Dauerhaften Großbuchstaben) geschrieben wird. Hierzu<br />
+            Karl sorgt auf einem Discord Server dafür, dass die Bettruhe<br>
+            zwischen 22 Uhr und 6 Uhr eingehalten wird, sowie, dass nicht<br>
+            in Caps (Dauerhaften Großbuchstaben) geschrieben wird. Hierzu<br>
             antwortet er auf geschriebene Nachrichten auf Bayrisch.
           </p>
-          <a id="bot_invite" href="http://212.132.113.65:3000" target="_blank"
-            >Invite Bot</a
-          >
+          <a id="bot_invite" href="http://212.132.113.65:3000" target="_blank">Invite Bot</a>
         </div>
-        <div
-          class="project"
-          onclick="
-            window.location.href = 'https://lehradt.github.io/ProjectSourcer'
-          "
-          target="_blank"
-        >
+        <div class="project"onclick="window.location.href = 'https://lehradt.github.io/ProjectSourcer'"target="_blank">
           <div class="project_head">
             <h3>ProjectSourcer</h3>
-            <img
-              src="https://lehradt.github.io/ProjectSourcer/icon.png"
-              width="64px"
-            />
+            <img src="https://lehradt.github.io/ProjectSourcer/icon.png"width="64px">
           </div>
           <p>
             Ein Programm um aus einem einfachen URL eine fertige Quelle<br />
