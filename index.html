@@ -34,12 +34,21 @@
             padding: 0;
             width: 100vw;
             min-height: 100vh;
-            background: var(--bg);
+            background: linear-gradient(to bottom, #870202, #171717);
             color: var(--text);
             font-family: sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
+        }
+        .banner {
+            width: 100%;
+            height: 40%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            object-fit: cover;
+            object-position: center top;
         }
         .icon {
             position: absolute;
@@ -52,8 +61,10 @@
             height: 20%;
             margin-top: 40px;
             border-radius: 50%;
-            border: 7.5px solid var(--bg-dark);
+            background: linear-gradient(to bottom, #ff0000, #5a0101);
+            padding: 5px;
             transition: 0.2s;
+            z-index: 10;
         }
 
         h1 {
@@ -83,7 +94,7 @@
         }
 
         .links a:hover {
-            background: var(--bg-dark);
+            background: #00000020;
         }
 
         .links a img {
@@ -107,7 +118,6 @@
             .profile-image {
                 width: 30%;
                 height: 30%;
-                border: 5px solid var(--bg-dark);
             }
         }
         @media screen and (width <= 615px) {
@@ -120,49 +130,49 @@
             .profile-image {
                 width: 40%;
                 height: 40%;
-                border: 2.5px solid var(--bg-dark);
             }
         }
     </style>
 </head>
 <body>
     <img class="icon" src="icon.png">
+    <img class="banner" src="/banner.png">
     <img class="profile-image" src="/profile.png">
     <h1>Fabian Lehradt</h1>
 
     <nav class="links">
-        <a href="https://www.instagram.com/fabian_lehradt/" target="_blank">
-            <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/instagram/default.svg">
+        <a href="https://www.instagram.com/fabian_lehradt/" target="_blank" rel="noopener noreferrer">
+            <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/instagram/default.svg" alt="Instagram">
             <span class="brand">Instagram</span>
             <span class="name">fabian_lehradt</span>
         </a>
 
-        <a href="https://discord.com/users/1151971830983311441" target="_blank">
-            <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/discord/default.svg">
+        <a href="https://discord.com/users/1151971830983311441" target="_blank" rel="noopener noreferrer">
+            <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/discord/default.svg" alt="Discord">
             <span class="brand">Discord</span>
             <span class="name">cubxbuilder</span>
         </a>
 
-        <a href="https://www.tiktok.com/@fabian_lehradt" target="_blank">
-            <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/tiktok/default.svg">
+        <a href="https://www.tiktok.com/@fabian_lehradt" target="_blank" rel="noopener noreferrer">
+            <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/tiktok/default.svg" alt="TikTok">
             <span class="brand">TikTok</span>
             <span class="name">fabian_lehradt</span>
         </a>
 
-        <a href="https://github.com/CubxBuilder" target="_blank">
-            <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/github/default.svg">
+        <a href="https://github.com/CubxBuilder" target="_blank" rel="noopener noreferrer">
+            <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/github/default.svg" alt="GitHub">
             <span class="brand">GitHub</span>
             <span class="name">CubxBuilder</span>
         </a>
 
-        <a href="https://open.spotify.com/user/31pwbuabdzbqav3fhp6mwyoaanuu?si=4692c7f4d3e24ae5" target="_blank">
-            <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/spotify/default.svg">
+        <a href="https://open.spotify.com/user/31pwbuabdzbqav3fhp6mwyoaanuu?si=4692c7f4d3e24ae5" target="_blank" rel="noopener noreferrer">
+            <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/spotify/default.svg" alt="Spotify">
             <span class="brand">Spotify</span>
             <span class="name">Fabian</span>
         </a>
 
-        <a href="https://www.kleinanzeigen.de/s-bestandsliste.html?userId=163860823" target="_blank">
-            <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/kleinanzeigen/default.svg">
+        <a href="https://www.kleinanzeigen.de/s-bestandsliste.html?userId=163860823" target="_blank" rel="noopener noreferrer">
+            <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/kleinanzeigen/default.svg" alt="Kleinanzeigen">
             <span class="brand">Kleinanzeigen</span>
             <span class="name">Fabian Lehradt</span>
         </a>
